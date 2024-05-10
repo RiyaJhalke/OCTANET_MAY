@@ -37,20 +37,12 @@ nav {
 
 nav > #logo {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    grid-gap: 8px;
-    line-height: 100%;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 nav ul.navigation-menu {
     display: flex;
-    flex-direction: row;
-    flex: 1;
     justify-content: center;
-    position: relative;
-    top: 0;
 }
 
 nav .navigation-menu a {
@@ -61,18 +53,15 @@ nav .navigation-menu a {
 
 nav .navigation-menu > li {
     display: flex;
-    flex-direction: column;
     align-items: center;
     cursor: pointer;
 }
 
 nav .navigation-menu > li > a {
-    position: relative;
     padding: 0 20px;
     height: 64px;
     display: flex;
     align-items: center;
-    justify-items: center;
 }
 
 nav > #utility {
