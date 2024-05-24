@@ -96,20 +96,27 @@ li button:hover {
   color: #46093f;
 }
 
-@media (min-width: 600px) {
-  .inputline {
-    flex-direction: row; 
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
   }
 
-  .inputline input {
-    margin-right: 10px;
-    margin-bottom: 0; 
+  h1 {
+    padding-bottom: 30px;
+    font-size: 1.5em;
   }
 
-  .inputline button {
-    width: auto; 
+  .inputline input, .inputline button {
+    padding: 8px;
+  }
+
+  li {
+    padding: 8px;
+  }
+
+  li button {
+    font-size: 14px;
   }
 }
-
 
 
