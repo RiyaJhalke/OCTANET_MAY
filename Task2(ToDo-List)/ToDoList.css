@@ -5,32 +5,30 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #ebd7f3;
+  background: linear-gradient(135deg, #ebd7f3, #c48edb);
 }
 
 .container {
   background-color: #9f2f94;
-  padding: 20px;
+  padding: 25px;
   width: 90%;
   max-width: 700px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
-  margin: 20px 0 20px 0;
+  margin: 20px 0 30px 0;
   text-align: center;
-  padding-bottom: 50px;
-  animation-name: h1-up;
-  animation-delay: 0.25s;
-  animation-duration: 0.55s;
-  animation-fill-mode: forwards;
+  color: white;
+  font-size: 2rem;
+  animation: spinIn 1s ease-in-out;
 }
 
-@keyframes h1-up {
-  100% {
-    transform: rotate(360deg);
-  }
+@keyframes spinIn {
+  0% { transform: rotate(-360deg); opacity: 0; }
+  100% { transform: rotate(0deg); opacity: 1; }
 }
 
 .inputline {
@@ -43,25 +41,28 @@ h1 {
 
 .inputline input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #7b6060;
   border-radius: 25px;
-  margin-right: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  font-size: 16px;
 }
 
 .inputline button {
   width: 100%;
-  padding: 10px;
-  border: 1px solid black;
+  padding: 12px;
+  border: none;
   background-color: #7d1085;
-  color: rgb(243, 230, 230);
+  color: #fff;
   cursor: pointer;
   border-radius: 15px;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
 .inputline button:hover {
   background-color: #502a61;
-  transition: ease-in-out 0.3s;
 }
 
 ul {
@@ -73,15 +74,37 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 12px;
   border-radius: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   background-color: #d3b5e1;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 li.completed {
   text-decoration: line-through;
   background-color: #d482b6;
+}
+
+li span {
+  flex: 1;
+  cursor: pointer;
+}
+
+.task-date {
+  font-size: 12px;
+  color: #5a3d5c;
+  margin-right: 10px;
 }
 
 li button {
@@ -109,4 +132,9 @@ li button:hover {
   .inputline button {
     width: auto;
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
